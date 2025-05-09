@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css'
+
 const pageTitle = "About Me";
 
 const identity = {
@@ -14,6 +16,10 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
+const skillColor = "cornflowerblue";
+const altSkillColor = "red";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -23,6 +29,22 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{ pageTitle }</title>
+		<style define:vars={{skillColor, altSkillColor, fontWeight, textCase}}>
+			h1 {
+			  color: rebeccapurple;
+			  font-size: 4rem;
+			}
+
+			.skill {
+				color: var(--skillColor);
+				font-weight: var(--fontWeight);
+				text-transform: var(--textCase);
+			}
+
+			.skill:nth-child(even) {
+				color: var(--altSkillColor);
+			}
+		</style>
 	</head>
 	<body>
 		<a href="/">Home</a>
@@ -38,8 +60,8 @@ const goal = 3;
 			<li>Two of my hobbies are {identity.hobbies[0]} and {identity.hobbies[1]}.</li>
 		</ul>
 		<p>My skillset includes: </p>
-		<ul>
-			{skills.map(skill => <li>{skill}</li>)}
+		<ul id="skills">
+			{skills.map(skill => <li class="skill">{skill}</li>)}
 		</ul>
 		
 		{happy && <p>I am happy to be learning Astro!</p>}
