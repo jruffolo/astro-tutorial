@@ -2,23 +2,40 @@ html {
     background-color: #f1f5f9;
     font-family: sans-serif;
   }
+
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
   
-  body {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 80ch;
-    padding: 1rem;
-    line-height: 1.5;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  h1 {
-    margin: 1rem 0;
-    font-size: 2.5rem;
-  }
+.dark .nav-links a {
+  color: #fff;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80ch;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 1rem 0;
+  font-size: 2.5rem;
+}
+
+a {
+  color: #ff9776;
+}
+
+a:hover {
+  color: rebeccapurple;
+}
 
 /* hamburger styles */
 
